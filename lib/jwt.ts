@@ -1,11 +1,10 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_super_secret_jwt_key_change_in_production';
-const JWT_EXPIRE: string | number = process.env.JWT_EXPIRE || '7d';
+const JWT_EXPIRE = process.env.JWT_EXPIRE || '7d';
 
 export function generateToken(userId: string) {
-  const options: SignOptions = { expiresIn: JWT_EXPIRE };
-  return jwt.sign({ userId }, JWT_SECRET, options);
+  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: JWT_EXPIRE as any });
 }
 
 export function verifyToken(token: string) {
