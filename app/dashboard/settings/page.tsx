@@ -62,7 +62,7 @@ export default function SettingsPage() {
       icon: Lock,
       items: [
         { label: '2-Factor Authentication', toggle: true, value: false, onChange: () => { } },
-        { label: 'Change Password', type: 'button', action: () => toast.info('Change password feature coming soon') },
+        { label: 'Change Password', type: 'button', action: () => toast('Change password feature coming soon') },
       ],
     },
   ];
