@@ -91,7 +91,7 @@ export default function RecentActivityTimeline({ scans }: RecentActivityTimeline
                   <p className="font-semibold truncate">{scan.target}</p>
                 </div>
                 <p className="text-xs text-slate-400">
-                  {formatDistanceToNow(new Date(scan.createdAt), { addSuffix: true })}
+                  {formatDistanceToNow(scan.createdAt)}
                 </p>
               </div>
 
